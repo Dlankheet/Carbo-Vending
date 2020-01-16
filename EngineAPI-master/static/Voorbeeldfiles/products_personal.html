@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html>
+
+<meta charset="UTF-8">
+<title>Popular Products</title>
+<script src="javascript/webfunctions.js"></script>
+
+<body>
+    <h3>My Personal Recommendations:</h3>
+
+    <form id="session">
+        <label style="float: left; width: 100px;">_id:</label><input type="text" name="_id" /><br>
+        <label style="float: left; width: 100px;">buid:</label><input type="text" name="buid" /><br>
+        <button type="button" onclick="loadPersonalProducts()">Send!</button><br>
+    </form>
+
+    <br>
+
+    <table id="products" style="text-align: left">
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Deeplink</th>
+        </tr>
+    </table>
+</body>
+
+</html>
