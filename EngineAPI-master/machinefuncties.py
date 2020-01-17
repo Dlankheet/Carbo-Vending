@@ -1,35 +1,26 @@
-import RPi.GPIO as GPIO
-import time, datetime
+from gpiozero import *
+from time import *
+from datetime import *
 
-GPIO.setmode(GPIO.BOARD)
 meting = 0
 amount_cans = 0
 
+def vandalism_alarm():
+    buzzer = Buzzer(9)
+    for i in range(0, 5):
+        buzzer.on()
+        sleep(1)
+        buzzer.off()
+
 def read_distance():
     global meting
-    TRIG = 16
-    ECHO = 18
-
-    GPIO.setup(TRIG, GPIO.OUT)
-    GPIO.output(TRIG, 0)
-
-    GPIO.setup(ECHO, GPIO.IN)
-
-    time.sleep(0.1)
-
-    GPIO.output(TRIG, 1)
-    time.sleep(0.00001)
-    GPIO.output(TRIG, 0)
-
-    while GPIO.input(ECHO) == 0:
-        start = time.time()
-    while GPIO.input(ECHO) == 1:
-        stop = time.time()
-    meting = (stop - start) * 17000
-    if meting > 2000:
-        print("probeer opnieuw")
-    else:
-        print("{0:.2f} Centimeter".format(meting))
+    distance_sensor = DistanceSensor(echo=24, trigger=24)
+    distance_sensor.max_distance = 0.4
+    error = distance_sensor.value()
+    if error >= 1:
+        meting = 99
+    meting = (distance_sensor.distance * 100)
+    print("{0:.2f} Centimeter".format(meting))
 
 def calculate_cans():
     global meting, amount_cans
@@ -62,30 +53,29 @@ def write_result():
     global amount_cans
     time = datetime.time.hour.minute()
     date = datetime.date.today()
-    stock_registration = [amount_cans, date, time]
-    print(stock_registration)
+    if amount_cans < 99:
+        stock_registration = [amount_cans, date, time]
+        print(stock_registration)
 
 def start_machine():
     print("Programma is gestart.")
-    button = 10
-    led = 8
-    GPIO.setup(led, GPIO.OUT)
-    GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    button = Button(15)
+    led = LED(14)
+    tilt = Button(15)
     machine_loop = True
     while machine_loop:
-        if GPIO.input(button) == 1:
+        if button.value == 1:
             print("Meting word gestart.")
-            GPIO.output(led, 1)
+            led.on()
             read_distance()
             calculate_cans()
             time.sleep(0.5)
-            GPIO.output(led, 0)
+            led.off()
 
-        if GPIO.input(tilt_sensor) == 1:
-            print("Er wordt vandalisme gepleegd!")
+        if tilt.vaulue == 1:
+            led.on()
+            vandalism_alarm()
+            led.off()
 
-
-
-# read_distance()
+#read_distance()
 start_machine()
-
