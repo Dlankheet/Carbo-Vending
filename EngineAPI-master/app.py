@@ -1,35 +1,30 @@
 from flask import Flask, send_from_directory, jsonify, redirect, request, render_template
+import json
 # from machinefuncties import *
 
 app = Flask(__name__)
 
-posts = [
-    {
-        'author': 'Jordan Peterson',
-        'title': '12 Rules for life',
-        'content': 'eye opening book',
-        'date_posted': 'April 20, 2018'
-    },
-    {
-        'author': 'George Orwell',
-        'title': '1984',
-        'content': 'very scary book',
-        'date_posted': 'April 28, 2018'
-    }
-]
+maxcans = 6
+
+HLcansAmount = 4
+PLcansAmount = 4
+
+def amountpercent(amount, maxcans):
+    percent = str((100 / maxcans) * amount)
+    return percent[:5] + '%'
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html', posts=posts)
+    return render_template('home.html')
 
 @app.route('/heidelberglaan')
 def heidelberglaan():
-    return render_template('heidelberglaan.html')
+    return render_template('heidelberglaan.html', HLcansAmount=HLcansAmount, amountpercent=amountpercent(HLcansAmount, maxcans))
 
 @app.route('/padualaan')
 def padualaan():
-    return render_template('padualaan.html')
+    return render_template('padualaan.html', PLcansAmount=PLcansAmount)
 
 @app.route('/<path:filename>')
 def download_file(filename):

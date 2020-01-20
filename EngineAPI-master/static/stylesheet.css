@@ -8,6 +8,20 @@ h1,h2,h3,h4,h5,h6,p {
 	font-family:'Roboto Regular', sans-serif;
 }
 
+.black-color{color:#212121;}
+
+#can-progress-bar-container {
+    height:50px;
+    width:300px;
+    background-color:#fff;
+    border:1px solid #000;
+}
+
+#can-progress-bar {
+    height:100%;
+    background-color:blue;
+}
+
 #logo-container {
 	background-image:url("frisdrank_logo_naam.png");
 	border-radius:20px;
