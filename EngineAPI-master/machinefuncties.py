@@ -1,26 +1,35 @@
 from gpiozero import *
 from time import *
 from datetime import *
+import json
 
 meting = 0
 amount_cans = 0
+stock_registration = [0]
+sold = 0
+records = {}
 
 def vandalism_alarm():
+    """Laat buzzer afgaan voor aantal keer in range. """
     buzzer = Buzzer(9)
-    for i in range(0, 5):
+    for i in range(0, 1):
+        print("letop vandalisme")
         buzzer.on()
         sleep(1)
         buzzer.off()
+        sleep(1)
+
 
 def read_distance():
     global meting
-    distance_sensor = DistanceSensor(echo=24, trigger=24)
+    distance_sensor = DistanceSensor(echo=24, trigger=23)
     distance_sensor.max_distance = 0.4
-    error = distance_sensor.value()
-    if error >= 1:
-        meting = 99
+    # error = distance_sensor.value()
+    # if error >= 1:
+    #    meting = 99
     meting = (distance_sensor.distance * 100)
     print("{0:.2f} Centimeter".format(meting))
+
 
 def calculate_cans():
     global meting, amount_cans
@@ -49,33 +58,50 @@ def calculate_cans():
         print()
         amount_cans = 99
 
-def write_result():
-    global amount_cans
-    time = datetime.time.hour.minute()
-    date = datetime.date.today()
-    if amount_cans < 99:
-        stock_registration = [amount_cans, date, time]
-        print(stock_registration)
+
+def create_record():
+    global amount_cans, stock_registration, sold, records
+    date = str(datetime.now().strftime("%Y-%m-%d"))
+    time = str(datetime.now().strftime("%H:%M:%S"))
+    if amount_cans < 99 and amount_cans != stock_registration[0]:
+        record = {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold}
+        print("er is aangepast")
+        write_record()
+
+def open_data():
+    with open('record_data.json') as f:
+        recorddata = json.load(f)
+        return recorddata
+
+def write_record():
+    global record
+    with
+
+
+
 
 def start_machine():
+    global sold
     print("Programma is gestart.")
     button = Button(15)
     led = LED(14)
-    tilt = Button(15)
+    tilt = Button(10)
     machine_loop = True
     while machine_loop:
         if button.value == 1:
             print("Meting word gestart.")
+            sold += 1
             led.on()
             read_distance()
             calculate_cans()
-            time.sleep(0.5)
+            create_result()
+            sleep(0.5)
             led.off()
 
-        if tilt.vaulue == 1:
-            led.on()
-            vandalism_alarm()
-            led.off()
+        # if tilt.value == 0:
+        #     led.on()
+        #     vandalism_alarm()
+        #     led.off()
 
-#read_distance()
+
 start_machine()
