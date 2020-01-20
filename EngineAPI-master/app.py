@@ -9,6 +9,7 @@ maxcans = 6
 HLcansAmount = 4
 PLcansAmount = 4
 
+
 def amountpercent(amount, maxcans):
     percent = str((100 / maxcans) * amount)
     return percent[:5] + '%'
