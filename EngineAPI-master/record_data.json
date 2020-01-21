@@ -1,9 +1,3 @@
 {
-  "records": [
-    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold},
-    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold},
-    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold},
-    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold},
-    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold}
-  ]
+  "records": [{"Tijd": "17:19:34", "Date": "2020-01-20", "Amount": 2, "Sold": 1}]
 }
