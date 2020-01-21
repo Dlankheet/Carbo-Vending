@@ -10,7 +10,7 @@ maintenancemax = 100
 HLcansAmount = 3
 PLcansAmount = 4
 
-HLsold = 30
+HLsold = 80
 
 def amountpercent(amount, max):
     percent = str((100 / max) * amount)
