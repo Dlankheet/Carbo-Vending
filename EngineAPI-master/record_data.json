@@ -1,0 +1,9 @@
+{
+  "records": [
+    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold},
+    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold},
+    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold},
+    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold},
+    {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold}
+  ]
+}
