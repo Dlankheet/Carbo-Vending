@@ -80,7 +80,6 @@ def write_record(recorddata):
         json.dump(f, recorddata, indent=2)
 
 
-
 def start_machine():
     global sold
     print("Programma is gestart.")
