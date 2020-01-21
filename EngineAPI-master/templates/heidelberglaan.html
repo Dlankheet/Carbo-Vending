@@ -2,6 +2,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="../static/stylesheet.css">
 		<link rel="icon" href="../static/frisdrank_logo.png">
+        <script src="https://kit.fontawesome.com/8c2044fb38.js" crossorigin="anonymous"></script>
 		<title>Carbo Vending Portal</title>
 	</head>
 	<body>
@@ -31,10 +32,16 @@
                             </div>
                         </li>
                         <li>
-                            <h3 class="black-color">Onderhoudsmeter</h3>
+                            <h3 class="black-color">Onderhoudsmeter
+                                <i class="far fa-question-circle fa-xs">
+                                    <div class="instruction">
+                                        <p>Deze meter telt het aantal blikjes dat verkocht is sinds de laatste onderhoud-reset</p>
+                                    </div>
+                                </i>
+                            </h3>
                             <div class="can-progress-bar-container">
                                 <div class="can-progress-bar" style="width:{{ amountpercentmaintenance }};">
-                                    {% if  HLcansAmount == 0 %}
+                                    {% if  HLsold == 0 %}
                                         <h4 class="zero-cans">{{ HLsold }}</h4>
                                     {% else %}
                                         <h4>{{ HLsold }}</h4>
@@ -49,7 +56,7 @@
                     </ul>
                 </div>
                 <div class="prediction-container">
-
+                    <h2>Voorspelling</h2>
                 </div>
             </div>
 			<div class="footer">
