@@ -10,33 +10,139 @@ h1,h2,h3,h4,h5,h6,p {
 
 .black-color{color:#212121;}
 
-#can-progress-bar-container {
-    height:50px;
-    width:300px;
-    background-color:#fff;
-    border:1px solid #000;
+.content {
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content: center;
+    padding-top:30px;
 }
 
-#can-progress-bar {
-    height:100%;
-    background-color:blue;
+.machine-status-container{
+    margin-right:40px;
+}
+
+.machine-status-container,
+.prediction-container {
+    width:40%;
+    float:left;
+    border:1px solid #cacaca;
+    box-sizing:border-box;
+    padding:25px;
+    background-color:#fff;
+    border-radius:3px;
+}
+
+.machine-status-list {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+.machine-status-list li {
+    margin-bottom:25px;
+    float:left;
+}
+
+.machine-status-container h2,
+.prediction-container h2 {
+    margin-bottom:30px !important;
+}
+
+.machine-status-container h1,
+.machine-status-container h2,
+.machine-status-container h3,
+.machine-status-container h4,
+.machine-status-container h5,
+.machine-status-container h6,
+.prediction-container h1,
+.prediction-container h2,
+.prediction-container h3,
+.prediction-container h4,
+.prediction-container h5,
+.prediction-container h6 {
+    margin-top:0px;
+    margin-bottom:5px;
+    font-weight:500;
+}
+
+.can-progress-bar-container {
+    height:25px;
+    width:200px;
+    background-color:#fff;
+    border:1px solid #696969;
+    border-radius: 5px;
+    position:relative;
+}
+
+.can-progress-bar {
+    height: 100%;
+    background-color: #1565C0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.can-progress-bar h4 {
+    color:#fff;
+    margin-bottom:0px;
+    text-align:center;
+}
+
+.zero-cans {
+    color:#000 !important;
+    margin-left:20px;
+}
+
+.measurements-container {
+    padding-top:13px;
+    float:left;
+    width:100%;
+    position: relative;
+}
+
+.measurements-container::before,
+.measurements-container::after {
+    content:'';
+    display:block;
+    width:1px;
+    height:8px;
+    background-color:#000;
+    position:absolute;
+    top:3px;
+}
+
+.measurements-container::after {
+    right:0;
+}
+
+.measurement:nth-child(1) {
+    float:left;
+    margin-left:-3px;
+}
+
+.measurement:nth-child(2) {
+    float:right;
+    margin-right:-3px;
 }
 
 #logo-container {
 	background-image:url("frisdrank_logo_naam.png");
 	border-radius:20px;
-	height:150px;
-	width:150px;
+	height:100px;
+	width:100px;
 	margin:0 auto;
 	background-repeat:no-repeat;
 	background-size:cover;
 	position:relative;
 }
 
-#logo {
+#logo-container.home-logo {
+    height:150px;
 	width:150px;
-	height:150px;
-	position:absolute;
 }
 
 .container {

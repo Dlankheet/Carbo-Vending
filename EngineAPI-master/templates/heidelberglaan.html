@@ -9,11 +9,49 @@
 			<div class = "header">
 				<div id="logo-container"></div>
 				<h1 class="titelblok">Heidelberglaan</h1>
-                <h2 class="black-color">Aantal blikjes: {{ HLcansAmount }}</h2>
-                <div id="can-progress-bar-container">
-                    <div id="can-progress-bar" style="width:{{ amountpercent }};"></div>
-                </div>
 			</div>
+            <div class="content">
+                <div class="machine-status-container">
+                    <h2>Machine status</h2>
+                    <ul class="machine-status-list">
+                        <li>
+                            <h3 class="black-color">Aantal blikjes</h3>
+                            <div class="can-progress-bar-container">
+                                <div class="can-progress-bar" style="width:{{ amountpercentcans }};">
+                                    {% if  HLcansAmount == 0 %}
+                                        <h4 class="zero-cans">{{ HLcansAmount }}</h4>
+                                    {% else %}
+                                        <h4>{{ HLcansAmount }}</h4>
+                                    {% endif %}
+                                </div>
+                                <div class="measurements-container">
+                                    <h5 class="measurement">0</h5>
+                                    <h5 class="measurement">{{ maxcans }}</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="black-color">Onderhoudsmeter</h3>
+                            <div class="can-progress-bar-container">
+                                <div class="can-progress-bar" style="width:{{ amountpercentmaintenance }};">
+                                    {% if  HLcansAmount == 0 %}
+                                        <h4 class="zero-cans">{{ HLsold }}</h4>
+                                    {% else %}
+                                        <h4>{{ HLsold }}</h4>
+                                    {% endif %}
+                                </div>
+                                <div class="measurements-container">
+                                    <h5 class="measurement">0</h5>
+                                    <h5 class="measurement">{{ maintenancemax }}</h5>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="prediction-container">
+
+                </div>
+            </div>
 			<div class="footer">
 				<p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> edited by D. Lankheet<p>
 			</div>

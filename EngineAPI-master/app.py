@@ -5,12 +5,15 @@ import json
 app = Flask(__name__)
 
 maxcans = 6
+maintenancemax = 100
 
-HLcansAmount = 4
+HLcansAmount = 3
 PLcansAmount = 4
 
-def amountpercent(amount, maxcans):
-    percent = str((100 / maxcans) * amount)
+HLsold = 30
+
+def amountpercent(amount, max):
+    percent = str((100 / max) * amount)
     return percent[:5] + '%'
 
 @app.route('/')
@@ -20,7 +23,7 @@ def home():
 
 @app.route('/heidelberglaan')
 def heidelberglaan():
-    return render_template('heidelberglaan.html', HLcansAmount=HLcansAmount, amountpercent=amountpercent(HLcansAmount, maxcans))
+    return render_template('heidelberglaan.html', HLcansAmount=HLcansAmount, amountpercentcans=amountpercent(HLcansAmount, maxcans),  maxcans=maxcans, maintenancemax=maintenancemax, amountpercentmaintenance=amountpercent(HLsold, maintenancemax), HLsold=HLsold)
 
 @app.route('/padualaan')
 def padualaan():
