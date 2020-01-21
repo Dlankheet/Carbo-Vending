@@ -7,7 +7,7 @@ meting = 0
 amount_cans = 0
 stock_registration = [0]
 sold = 0
-records = {}
+recorddata = {}
 
 def vandalism_alarm():
     """Laat buzzer afgaan voor aantal keer in range. """
@@ -60,23 +60,24 @@ def calculate_cans():
 
 
 def create_record():
-    global amount_cans, stock_registration, sold, records
+    global amount_cans, stock_registration, sold, record
     date = str(datetime.now().strftime("%Y-%m-%d"))
     time = str(datetime.now().strftime("%H:%M:%S"))
     if amount_cans < 99 and amount_cans != stock_registration[0]:
         record = {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold}
         print("er is aangepast")
+        open_data()
         write_record()
 
 def open_data():
-    with open('record_data.json') as f:
-        recorddata = json.load(f)
+    with open('record_data.json') as file:
+        recorddata = json.load(file)
         return recorddata
 
-def write_record():
-    global record
-    with
-
+def write_record(recorddata):
+    recorddata.append[]
+    with open('record_data.json', 'w') as f:
+        json.dump(f, recorddata, indent=2)
 
 
 
@@ -94,7 +95,7 @@ def start_machine():
             led.on()
             read_distance()
             calculate_cans()
-            create_result()
+            create_record()
             sleep(0.5)
             led.off()
 
