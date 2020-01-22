@@ -2,6 +2,7 @@ from gpiozero import *
 from time import *
 from datetime import *
 import json
+import json_open
 
 meting = 0
 amount_cans = 0
@@ -15,9 +16,11 @@ def open_record():
         recorddata = json.load(f)
         return recorddata
 
+
 def write_record(new_recorddata):
     with open('record_data.json', 'w') as f:
         json.dump(new_recorddata, f, indent=2)
+
 
 def vandalism_alarm():
     """Laat buzzer afgaan voor aantal keer in range. """
@@ -39,7 +42,7 @@ def read_distance():
     #    meting = 99
     meting = (distance_sensor.distance * 100)
     print("{0:.2f} Centimeter".format(meting))
-
+    calculate_cans()
 
 def calculate_cans():
     global meting, amount_cans
@@ -93,7 +96,6 @@ def start_machine():
             sold += 1
             led.on()
             read_distance()
-            calculate_cans()
             create_record()
             sleep(0.5)
             led.off()
@@ -102,6 +104,3 @@ def start_machine():
         #     led.on()
         #     vandalism_alarm()
         #     led.off()
-
-
-start_machine()

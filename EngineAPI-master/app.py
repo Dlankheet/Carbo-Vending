@@ -1,6 +1,6 @@
 from flask import Flask, send_from_directory, jsonify, redirect, request, render_template
 import json
-# from machinefuncties import *
+
 
 app = Flask(__name__)
 
@@ -34,4 +34,5 @@ def download_file(filename):
     return send_from_directory('static', filename, as_attachment=False)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
+

@@ -6,7 +6,7 @@
         <remote-mappings server-id="python@sftp://pi@192.168.42.101:22/usr/bin/python3">
           <settings>
             <list>
-              <mapping local-root="$PROJECT_DIR$/EngineAPI-master" remote-root="/home/pi/Desktop/Project" />
+              <mapping local-root="&lt;Project root&gt;" remote-root="/home/pi/Desktop/Project" />
             </list>
           </settings>
         </remote-mappings>
