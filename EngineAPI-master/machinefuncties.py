@@ -7,7 +7,17 @@ meting = 0
 amount_cans = 0
 stock_registration = [0]
 sold = 0
-recorddata = {}
+record = []
+
+
+def open_record():
+    with open('record_data.json') as f:
+        recorddata = json.load(f)
+        return recorddata
+
+def write_record(new_recorddata):
+    with open('record_data.json', 'w') as f:
+        json.dump(new_recorddata, f, indent=2)
 
 def vandalism_alarm():
     """Laat buzzer afgaan voor aantal keer in range. """
@@ -65,19 +75,9 @@ def create_record():
     time = str(datetime.now().strftime("%H:%M:%S"))
     if amount_cans < 99 and amount_cans != stock_registration[0]:
         record = {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold}
-        print("er is aangepast")
-        open_data()
-        write_record()
-
-def open_data():
-    with open('record_data.json') as file:
-        recorddata = json.load(file)
-        return recorddata
-
-def write_record(recorddata):
-    recorddata.append[]
-    with open('record_data.json', 'w') as f:
-        json.dump(f, recorddata, indent=2)
+        recorddata = open_record()
+        recorddata["records"].append(record)
+        write_record(recorddata)
 
 
 def start_machine():
