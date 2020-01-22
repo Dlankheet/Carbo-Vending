@@ -10,9 +10,10 @@ def get_data():
     records = len(recorddata['records']) - 1
     amount_cans = recorddata['records'][records]['Amount']
     amount_sold = recorddata['records'][records]['Sold']
-    tijd = recorddata['records'][records]['Tijd']
-    print(recorddata)
-    print("Aantalblikjes = {} om {}".format(amount_cans, tijd))
-    print("Aantal verkocht = {}".format(amount_sold))
+    #tijd = recorddata['records'][records]['Tijd']
+    # print(recorddata)
+    # print("Aantalblikjes = {} om {}".format(amount_cans, tijd))
+    # print("Aantal verkocht = {}".format(amount_sold))
     return(amount_cans, amount_sold)
 
+#print(get_data())

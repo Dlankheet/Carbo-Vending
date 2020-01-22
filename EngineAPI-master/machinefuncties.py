@@ -3,6 +3,8 @@ from time import *
 from datetime import *
 import json
 import json_open
+import app
+
 
 meting = 0
 amount_cans = 0
@@ -104,3 +106,5 @@ def start_machine():
         #     led.on()
         #     vandalism_alarm()
         #     led.off()
+
+start_machine()

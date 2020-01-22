@@ -1,16 +1,16 @@
 from flask import Flask, send_from_directory, jsonify, redirect, request, render_template
 import json
-
+import json_open
 
 app = Flask(__name__)
 
 maxcans = 6
 maintenancemax = 100
 
-HLcansAmount = 3
+HLcansAmount = json_open.get_data()[0]
 PLcansAmount = 5
 
-HLsold = 80
+HLsold = json_open.get_data()[1]
 PLsold = 60
 
 def amountpercent(amount, max):
@@ -34,6 +34,9 @@ def padualaan():
 def download_file(filename):
     return send_from_directory('static', filename, as_attachment=False)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+def run_site():
+    if __name__ == '__main__':
+        app.run(host='0.0.0.0')
+
+run_site()
 
