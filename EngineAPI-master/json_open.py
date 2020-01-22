@@ -1,6 +1,7 @@
 import json
 
 def open_recorddata():
+
     with open('record_data.json') as f:
         recorddata = json.load(f)
         return recorddata

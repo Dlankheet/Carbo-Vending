@@ -7,11 +7,11 @@ app = Flask(__name__)
 maxcans = 6
 maintenancemax = 100
 
-HLcansAmount = json_open.get_data()[0]
-PLcansAmount = 5
+HLcansAmount = json_openhl.get_data()[0]
+PLcansAmount = json_openpl.get_data()[0]
 
-HLsold = json_open.get_data()[1]
-PLsold = 60
+HLsold = json_openhl.get_data()[1]
+PLsold = json_openpl.get_data()[0]
 
 def amountpercent(amount, max):
     percent = str((100 / max) * amount)

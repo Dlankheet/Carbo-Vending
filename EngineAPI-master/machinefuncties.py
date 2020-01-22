@@ -11,17 +11,16 @@ amount_cans = 0
 stock_registration = [0]
 sold = 0
 record = []
-hl_file = 'record_data_hl.json'
-pl_file = 'record_data_pl.json'
-
+file = 'record_datapl.json'
 def open_record():
-    with open(hl_file) as f:
+
+    with open(file) as f:
         recorddata = json.load(f)
         return recorddata
 
 
 def write_record(new_recorddata):
-    with open(pl_file, 'w') as f:
+    with open(file, 'w') as f:
         json.dump(new_recorddata, f, indent=2)
 
 
