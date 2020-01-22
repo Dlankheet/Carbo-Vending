@@ -13,6 +13,7 @@ PLcansAmount = json_openpl.get_data()[0]
 HLsold = json_openhl.get_data()[1]
 PLsold = json_openpl.get_data()[0]
 
+
 def amountpercent(amount, max):
     percent = str((100 / max) * amount)
     return percent[:5] + '%'
