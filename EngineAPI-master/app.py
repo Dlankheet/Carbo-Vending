@@ -8,9 +8,10 @@ maxcans = 6
 maintenancemax = 100
 
 HLcansAmount = 3
-PLcansAmount = 4
+PLcansAmount = 5
 
 HLsold = 80
+PLsold = 60
 
 def amountpercent(amount, max):
     percent = str((100 / max) * amount)
@@ -27,7 +28,7 @@ def heidelberglaan():
 
 @app.route('/padualaan')
 def padualaan():
-    return render_template('padualaan.html', PLcansAmount=PLcansAmount)
+    return render_template('padualaan.html', PLcansAmount=PLcansAmount, amountpercentcans=amountpercent(PLcansAmount, maxcans),  maxcans=maxcans, maintenancemax=maintenancemax, amountpercentmaintenance=amountpercent(PLsold, maintenancemax), PLsold=PLsold)
 
 @app.route('/<path:filename>')
 def download_file(filename):

@@ -2,15 +2,63 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="../static/stylesheet.css">
 		<link rel="icon" href="../static/frisdrank_logo.png">
+        <script src="https://kit.fontawesome.com/8c2044fb38.js" crossorigin="anonymous"></script>
 		<title>Carbo Vending Portal</title>
 	</head>
 	<body>
 		<div class = "container">
 			<div class = "header">
 				<div id="logo-container"></div>
-				<h1 class="titelblok">Padualaan</h1>
-                <h1 class="black-color">Aantal blikjes: {{ PLcansAmount }}</h1>
+				<h1 class="titelblok">Padualaan 101</h1>
 			</div>
+            <div class="content">
+                <div class="machine-status-container">
+                    <h2>Machine status</h2>
+                    <ul class="machine-status-list">
+                        <li>
+                            <h3 class="black-color">Aantal blikjes</h3>
+                            <div class="can-progress-bar-container">
+                                <div class="can-progress-bar" style="width:{{ amountpercentcans }};">
+                                    {% if  PLcansAmount == 0 %}
+                                        <h4 class="zero-cans">{{ PLcansAmount }}</h4>
+                                    {% else %}
+                                        <h4>{{ PLcansAmount }}</h4>
+                                    {% endif %}
+                                </div>
+                                <div class="measurements-container">
+                                    <h5 class="measurement">0</h5>
+                                    <h5 class="measurement">{{ maxcans }}</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="black-color">Onderhoudsmeter
+                                <i class="far fa-question-circle fa-xs">
+                                    <div class="instruction">
+                                        <p>Deze meter telt het aantal blikjes dat verkocht is sinds de laatste onderhoud-reset</p>
+                                    </div>
+                                </i>
+                            </h3>
+                            <div class="can-progress-bar-container">
+                                <div class="can-progress-bar" style="width:{{ amountpercentmaintenance }};">
+                                    {% if  PLsold == 0 %}
+                                        <h4 class="zero-cans">{{ PLsold }}</h4>
+                                    {% else %}
+                                        <h4>{{ PLsold }}</h4>
+                                    {% endif %}
+                                </div>
+                                <div class="measurements-container">
+                                    <h5 class="measurement">0</h5>
+                                    <h5 class="measurement">{{ maintenancemax }}</h5>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="prediction-container">
+                    <h2>Voorspelling</h2>
+                </div>
+            </div>
 			<div class="footer">
 				<p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> edited by D. Lankheet<p>
 			</div>
