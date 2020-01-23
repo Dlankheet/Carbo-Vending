@@ -92,6 +92,7 @@ def create_record():
     else:
         print("De record is niet veranderd")
 
+
 def start_machine():
     global sold
     print("Programma is gestart.")
