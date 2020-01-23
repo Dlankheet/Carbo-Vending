@@ -1,0 +1,165 @@
+{
+  "records": [
+    {
+      "Tijd": "00:00:00",
+      "Date": "2020-01-01",
+      "Amount": 0,
+      "Sold": 0,
+      "onderhoud": 0
+    },
+    {
+      "Tijd": "15:58:40",
+      "Date": "2020-01-23",
+      "Amount": 5,
+      "Sold": 1,
+      "onderhoud": 1
+    },
+    {
+      "Tijd": "15:58:43",
+      "Date": "2020-01-23",
+      "Amount": 4,
+      "Sold": 2,
+      "onderhoud": 2
+    },
+    {
+      "Tijd": "15:58:45",
+      "Date": "2020-01-23",
+      "Amount": 3,
+      "Sold": 3,
+      "onderhoud": 3
+    },
+    {
+      "Tijd": "15:58:57",
+      "Date": "2020-01-23",
+      "Amount": 2,
+      "Sold": 4,
+      "onderhoud": 4
+    },
+    {
+      "Tijd": "15:59:02",
+      "Date": "2020-01-23",
+      "Amount": 3,
+      "Sold": 5,
+      "onderhoud": 5
+    },
+    {
+      "Tijd": "15:59:03",
+      "Date": "2020-01-23",
+      "Amount": 4,
+      "Sold": 6,
+      "onderhoud": 6
+    },
+    {
+      "Tijd": "15:59:36",
+      "Date": "2020-01-23",
+      "Amount": 5,
+      "Sold": 7,
+      "onderhoud": 7
+    },
+    {
+      "Tijd": "16:03:51",
+      "Date": "2020-01-23",
+      "Amount": 4,
+      "Sold": 8,
+      "onderhoud": 8
+    },
+    {
+      "Tijd": "16:04:47",
+      "Date": "2020-01-23",
+      "Amount": 2,
+      "Sold": 9,
+      "onderhoud": 1
+    },
+    {
+      "Tijd": "16:05:49",
+      "Date": "2020-01-23",
+      "Amount": 6,
+      "Sold": 10,
+      "onderhoud": 1
+    },
+    {
+      "Tijd": "16:06:05",
+      "Date": "2020-01-23",
+      "Amount": 5,
+      "Sold": 11,
+      "onderhoud": 2
+    },
+    {
+      "Tijd": "16:06:14",
+      "Date": "2020-01-23",
+      "Amount": 4,
+      "Sold": 12,
+      "onderhoud": 3
+    },
+    {
+      "Tijd": "16:06:23",
+      "Date": "2020-01-23",
+      "Amount": 5,
+      "Sold": 13,
+      "onderhoud": 4
+    },
+    {
+      "Tijd": "16:06:28",
+      "Date": "2020-01-23",
+      "Amount": 6,
+      "Sold": 14,
+      "onderhoud": 5
+    },
+    {
+      "Tijd": "16:06:39",
+      "Date": "2020-01-23",
+      "Amount": 5,
+      "Sold": 15,
+      "onderhoud": 6
+    },
+    {
+      "Tijd": "16:06:56",
+      "Date": "2020-01-23",
+      "Amount": 4,
+      "Sold": 16,
+      "onderhoud": 7
+    },
+    {
+      "Tijd": "16:07:03",
+      "Date": "2020-01-23",
+      "Amount": 3,
+      "Sold": 17,
+      "onderhoud": 8
+    },
+    {
+      "Tijd": "16:08:49",
+      "Date": "2020-01-23",
+      "Amount": 2,
+      "Sold": 18,
+      "onderhoud": 9
+    },
+    {
+      "Tijd": "16:08:54",
+      "Date": "2020-01-23",
+      "Amount": 1,
+      "Sold": 19,
+      "onderhoud": 10
+    },
+    {
+      "Tijd": "16:09:18",
+      "Date": "2020-01-23",
+      "Amount": 0,
+      "Sold": 20,
+      "onderhoud": 11
+    },
+    {
+      "Tijd": "16:09:36",
+      "Date": "2020-01-23",
+      "Amount": 3,
+      "Sold": 21,
+      "onderhoud": 12
+    },
+    {
+      "Tijd": "16:11:10",
+      "Date": "2020-01-23",
+      "Amount": 4,
+      "Sold": 22,
+      "onderhoud": 1
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+body {
+	margin:0;
+	padding:0;
+	width:100vw;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+	font-family:'Roboto Regular', sans-serif;
+}
+
+.black-color{color:#212121;}
+
+.content {
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content: center;
+    padding-top:30px;
+}
+
+.machine-status-container{
+    margin-right:40px;
+    width:35%;
+    min-width:250px;
+}
+
+.machine-status-container,
+.prediction-container {
+    float:left;
+    border:1px solid #cacaca;
+    box-sizing:border-box;
+    padding:25px;
+    background-color:#fff;
+    border-radius:3px;
+}
+
+.prediction-container {
+    width:75%;
+}
+
+.machine-status-list {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+.machine-status-list li {
+    width:100%;
+    margin-bottom:25px;
+    float:left;
+    text-align:center;
+}
+
+.machine-status-list li:nth-last-child(1) {
+    margin-bottom:0px;
+}
+
+.fa-question-circle {
+    margin-left:7px;
+    position:relative;
+}
+
+.fa-question-circle .instruction {
+    background-color: #2b2b2b;
+    border-radius: 3px;
+    border: 1px solid #adadad;
+    left: 20px;
+    top: -60px;
+    position:absolute;
+    width:300px;
+    padding:10px 10px;
+    z-index:999;
+    display:none;
+}
+
+.fa-question-circle .instruction p {
+    line-height:1.5;
+    margin:0;
+    color:#fff;
+}
+
+.fa-question-circle:hover .instruction {
+    display:block;
+}
+
+.fa-question-circle:hover::before {
+    font-weight:600;
+}
+
+.machine-status-container>h2,
+.prediction-container>h2 {
+    margin-bottom:30px !important;
+    text-align:center;
+}
+
+.machine-status-container h1,
+.machine-status-container h2,
+.machine-status-container h3,
+.machine-status-container h4,
+.machine-status-container h5,
+.machine-status-container h6,
+.prediction-container h1,
+.prediction-container h2,
+.prediction-container h3,
+.prediction-container h4,
+.prediction-container h5,
+.prediction-container h6 {
+    margin-top:0px;
+    margin-bottom:5px;
+    font-weight:500;
+}
+
+.can-progress-bar-container {
+    height:25px;
+    width:250px;
+    background-color:#fff;
+    border:1px solid #696969;
+    border-radius: 5px;
+    margin:0 auto;
+    position:relative;
+}
+
+.can-progress-bar {
+    height: 100%;
+    background-color: #1565C0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.can-progress-bar h4 {
+    color:#fff;
+    margin-bottom:0px;
+    text-align:center;
+}
+
+.zero-cans {
+    color:#000 !important;
+    margin-left:20px;
+}
+
+.measurements-container {
+    padding-top:13px;
+    float:left;
+    width:100%;
+    position: relative;
+}
+
+.measurements-container::before,
+.measurements-container::after {
+    content:'';
+    display:block;
+    width:1px;
+    height:8px;
+    background-color:#000;
+    position:absolute;
+    top:3px;
+}
+
+.measurements-container::after {
+    right:0;
+}
+
+.measurement:nth-child(1) {
+    float:left;
+    margin-left:-3px;
+}
+
+.measurement:nth-child(2) {
+    float:right;
+    margin-right:-3px;
+}
+
+#logo-container {
+	background-image:url("frisdrank_logo_naam.png");
+	border-radius:20px;
+	height:100px;
+	width:100px;
+	margin:0 auto;
+	background-repeat:no-repeat;
+	background-size:cover;
+	position:relative;
+}
+
+#logo-container.home-logo {
+    height:150px;
+	width:150px;
+}
+
+.container {
+	float:left;
+	width:100%;
+	background-image: linear-gradient(rgba(0,0,255,0), rgb(200, 200, 255));
+	height: 100%;
+	width: 100%;
+}
+
+.titelblok {
+	color:#212121;
+	font-family:'Roboto Regular', sans-serif;
+	font-weight:300;
+	margin-top:30px;
+}
+
+.header{
+	float:left;
+	width:100%;
+	margin-top:50px;
+	text-align: center;
+	color: white;
+}
+
+.button_container{
+	float:left;
+	width:100%;
+	margin-top: 20px;
+	height: 300px;
+	width: 100%;
+	display: flex;
+    justify-content: center;
+}
+
+.tile-button {
+	float:left;
+	width:400px;
+}
+
+.tile-button:nth-child(1){
+	margin-right:50px;
+}
+
+#button_hl15{
+	background: url(button_hl15.png); 
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	height: 300px;
+	width: 100%;
+	border: none;
+}
+
+#button_pl101{
+	background: url(button_pl101.png); 
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	height: 300px;
+	width: 100%;
+	border: none;
+}
+
+#button_hl15:hover{
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	transform:scale(1.02);
+	cursor:pointer;
+}
+
+#button_pl101:hover{
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	transform:scale(1.02);
+	cursor:pointer;
+}
+
+.footer{
+	position: absolute;
+	text-align: center;
+	color: grey;
+	font-size: 10px;
+	width:100%;
+	bottom:2px;
+}
+
+.footer > p {
+	color:#000;
+	opacity:0.75;
+	text-align:center;
+}
