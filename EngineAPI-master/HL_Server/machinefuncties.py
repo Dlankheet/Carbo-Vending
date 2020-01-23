@@ -89,7 +89,7 @@ def create_record():
         maintenance_counter = 0
         maintenance_value = 0
     else:
-        maintenance_counter = recorddata['records'][len(recorddata['records']) - 1]['Onderhoud']
+        maintenance_counter = recorddata['records'][len(recorddata['records']) - 1]['Maintenance']
 
     print("Amount of cans {}".format(amount_cans))
     print("Old data {}".format(recorddata['records'][len(recorddata['records']) - 1]))
@@ -97,7 +97,7 @@ def create_record():
     if amount_cans < 99 and recorddata['records'][len(recorddata['records']) - 1]['Amount'] != amount_cans:
         sold += 1
         maintenance_counter += 1
-        record = {"Tijd": time, "Date": date, "Amount": amount_cans, "Sold": sold, "Onderhoud": maintenance_counter}
+        record = {"Time": time, "Date": date, "Amount": amount_cans, "Sold": sold, "Maintenance": maintenance_counter}
         print("New data {}".format(record))
         recorddata["records"].append(record)
         write_record(recorddata)
@@ -121,7 +121,7 @@ def start_machine():
         if maintenance_button.value == 1:
             maintenance_value = 1
             sleep(1)
-            print("IS THIS FUCKING BUTTON PRESSED?")
+            print("Onderhoudsknop is ingedrukt.")
 
         if tilt.value == 0:
             sleep(0.3)
