@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/EngineAPI-master/PL" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/EngineAPI-master/HL_Server" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Remote Python 3.7.3 (sftp://pi@192.168.42.101:22/usr/bin/python3)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

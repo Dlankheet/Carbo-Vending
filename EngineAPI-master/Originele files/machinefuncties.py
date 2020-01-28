@@ -27,7 +27,7 @@ def vandalism_alarm():
     """Laat buzzer afgaan voor aantal keer in range. """
     buzzer = Buzzer(9)
     for i in range(0, 1):
-        print("letop vandalisme")
+        print("let op vandalisme")
         buzzer.on()
         sleep(1)
         buzzer.off()
