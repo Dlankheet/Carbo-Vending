@@ -2,7 +2,6 @@ from datetime import *
 import calendar
 import json
 
-
 # Open de json file en return het gehele bestand
 def open_recorddata():
     with open('record_data.json') as file:
