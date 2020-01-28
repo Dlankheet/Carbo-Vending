@@ -4,7 +4,7 @@ import json
 
 # Open de json file en return het gehele bestand
 def open_recorddata():
-    with open('record_data.json') as file:
+    with open('PL/record_dataPL.json') as file:
         recorddata = json.load(file)
         return recorddata
 
@@ -109,6 +109,10 @@ def sell_prediction(day):
             prediction = third_day - difference(difference(first_day, second_day), difference(second_day, third_day))
             if prediction < 0:
                 prediction = 0
+    if first_day > second_day < third_day:
+        prediction = first_day + second_day + third_day / len(selling_data_list)
+        return prediction
+
     # To-do:
     # [G,L,G] neutraal programmeren
     # [L,G,L] neutraal programmeren
