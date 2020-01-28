@@ -1,14 +1,21 @@
 from flask import Flask, send_from_directory, jsonify, redirect, request, render_template
 import json
 import json_open
+import voorspelling_HL
 
 app = Flask(__name__)
 
 maxcans = 6
 maintenancemax = 100
 
+predictions = voorspelling_HL.get_week_prediction()
+
 def amountpercent(amount, max):
-    percent = str((100 / max) * amount)
+    percent = (100 / max) * amount
+    if percent > 100:
+        percent = str(100)
+    else:
+        percent = str(percent)
     return percent[:5] + '%'
 
 @app.route('/')
@@ -20,7 +27,13 @@ def home():
 def heidelberglaan():
     HLcansAmount = json_open.get_data("HL")[0]
     HLsold = json_open.get_data("HL")[1]
-    return render_template('heidelberglaan.html', HLcansAmount=HLcansAmount, amountpercentcans=amountpercent(HLcansAmount, maxcans),  maxcans=maxcans, maintenancemax=maintenancemax, amountpercentmaintenance=amountpercent(HLsold, maintenancemax), HLsold=HLsold)
+    return render_template('heidelberglaan.html',
+                           HLcansAmount=HLcansAmount,
+                           amountpercentcans=amountpercent(HLcansAmount, maxcans),
+                           maxcans=maxcans, maintenancemax=maintenancemax,
+                           amountpercentmaintenance=amountpercent(HLsold, maintenancemax),
+                           HLsold=HLsold,
+                           predictions=predictions)
 
 @app.route('/<path:filename>')
 def download_file(filename):

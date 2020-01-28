@@ -4,7 +4,7 @@ import json
 
 # Open de json file en return het gehele bestand
 def open_recorddata():
-    with open('PL/record_dataHL.json') as file:
+    with open('record_dataPL.json') as file:
         recorddata = json.load(file)
         return recorddata
 
@@ -87,11 +87,12 @@ def sell_prediction(day):
 
     for record in selling_data:
         selling_data_list.append(selling_data[record])
+    if len(selling_data_list) > 3:
+        selling_data_list = selling_data_list[1:]
 
     first_day = selling_data_list[0]
     second_day = selling_data_list[1]
     third_day = selling_data_list[2]
-    print(selling_data_list)
 
     if first_day == second_day == third_day:
         prediction = third_day
@@ -109,14 +110,26 @@ def sell_prediction(day):
             prediction = third_day - difference(difference(first_day, second_day), difference(second_day, third_day))
             if prediction < 0:
                 prediction = 0
-    if first_day > second_day < third_day:
-        prediction = first_day + second_day + third_day / len(selling_data_list)
-        return prediction
+    if first_day > second_day < third_day or first_day < second_day > third_day:
+        prediction = (first_day + second_day + third_day) // len(selling_data_list)
+    if first_day == second_day:
+        if second_day > third_day:
+            prediction = third_day - difference(second_day, third_day)
+            if prediction < 0:
+                prediction = 0
+        if second_day < third_day:
+            prediction = third_day + difference(second_day, third_day)
+    if second_day == third_day:
+        if first_day > third_day:
+            prediction = third_day - difference(first_day, third_day)
+        if first_day < third_day:
+            prediction = third_day + difference(first_day, third_day)
 
-    # To-do:
-    # [G,L,G] neutraal programmeren
-    # [L,G,L] neutraal programmeren
-    # [N,N,G] en [G,N,N] zelfde twee dagen programmeren
+    return 'On {} approximately {} cans will be sold'.format(day, prediction)
 
-    print('The next {} will sell approximately {} cans'.format(day, prediction))
-sell_prediction('Saturday')
+def get_week_prediction():
+    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    predictions = []
+    for day in days:
+        predictions.append(sell_prediction(day))
+    return predictions
