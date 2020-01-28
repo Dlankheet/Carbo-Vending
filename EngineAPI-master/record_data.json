@@ -127,5 +127,6 @@
     {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 5, "Sold": 106, "Maintenance":  106},
     {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 4, "Sold": 107, "Maintenance":  107},
     {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 3, "Sold": 108, "Maintenance":  108}
+
   ]
 }
