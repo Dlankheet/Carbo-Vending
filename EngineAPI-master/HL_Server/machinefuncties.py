@@ -6,6 +6,14 @@ import json
 file = 'record_dataHL.json'
 maintenance_value = 0
 
+def open_candispencer():
+    global servo
+    servo.max()
+    sleep(2)
+    servo.min()
+    sleep(2)
+
+
 def open_record():
     '''Deze opent de Json file aan de hand van de variabele "file" bovenaan.'''
     with open(file) as f:
@@ -79,6 +87,7 @@ def calculate_cans(meting):
 
 
 def create_record():
+    '''Verzamelt alle gegevens van sensoren etc, maakt hier een dictionairy van.'''
     global maintenance_value
     date = str(datetime.now().strftime("%Y-%m-%d"))
     time = str(datetime.now().strftime("%H:%M:%S"))
@@ -106,15 +115,19 @@ def create_record():
 
 
 def start_machine():
-    global maintenance_value
+    '''Maakt loop voor knoppen indrukken etc.'''
+    global maintenance_value, servo
     print("Programma is gestart.")
     button = Button(15)
     tilt = Button(10)
     maintenance_button = Button(11)
+    servo = Servo(7, frame_width= 0.09)
+    servo.min()
     machine_loop = True
     while machine_loop:
         if button.value == 1:
             print("Meting word gestart.")
+            open_candispencer()
             sleep(1)
             create_record()
 
