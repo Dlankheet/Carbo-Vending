@@ -15,7 +15,7 @@ def amountpercent(amount, max):
 @app.route('/padualaan')
 def padualaan():
     PLcansAmount = json_open.get_data("PL")[0]
-    PLsold = json_open.get_data("PL")[0]
+    PLsold = json_open.get_data("PL")[1]
     return render_template('padualaan.html', PLcansAmount=PLcansAmount, amountpercentcans=amountpercent(PLcansAmount, maxcans),  maxcans=maxcans, maintenancemax=maintenancemax, amountpercentmaintenance=amountpercent(PLsold, maintenancemax), PLsold=PLsold)
 
 @app.route('/<path:filename>')
