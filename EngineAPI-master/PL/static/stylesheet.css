@@ -37,6 +37,13 @@ h1,h2,h3,h4,h5,h6,p {
 
 .prediction-container {
     width:75%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.prediction-content {
+    float:left;
 }
 
 .machine-status-list {

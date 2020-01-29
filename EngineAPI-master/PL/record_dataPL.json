@@ -99,7 +99,6 @@
     {"Time": "17:19:34", "Date": "2020-01-25", "Amount": 2, "Sold": 84, "Maintenance":  84},
     {"Time": "17:19:34", "Date": "2020-01-25", "Amount": 1, "Sold": 85, "Maintenance":  85},
     {"Time": "17:19:34", "Date": "2020-01-25", "Amount": 0, "Sold": 86, "Maintenance":  86},
-
     {"Time": "17:19:34", "Date": "2020-01-26", "Amount": 6, "Sold": 86, "Maintenance":  86},
     {"Time": "17:19:34", "Date": "2020-01-26", "Amount": 5, "Sold": 87, "Maintenance":  87},
     {"Time": "17:19:34", "Date": "2020-01-26", "Amount": 4, "Sold": 88, "Maintenance":  88},
@@ -127,6 +126,8 @@
     {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 3, "Sold": 107, "Maintenance":  107},
     {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 2, "Sold": 108, "Maintenance":  108},
     {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 1, "Sold": 109, "Maintenance":  109},
-    {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 0, "Sold": 110, "Maintenance":  110}
+    {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 0, "Sold": 110, "Maintenance":  110},
+    {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 6, "Sold": 110, "Maintenance":  110},
+    {"Time": "17:19:34", "Date": "2020-01-28", "Amount": 5, "Sold": 111, "Maintenance":  111}
   ]
 }

@@ -57,6 +57,11 @@
                 </div>
                 <div class="prediction-container">
                     <h2>Voorspelling</h2>
+                    <div class="prediction-content">
+                        {% for prediction in predictions %}
+                            <p>{{ prediction }}</p>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
 			<div class="footer">
