@@ -27,12 +27,15 @@ def home():
 def heidelberglaan():
     HLcansAmount = json_open.get_data("HL")[0]
     HLsold = json_open.get_data("HL")[1]
+    HLmaintenance = json_open.get_data("HL")[2]
+    print(HLcansAmount, HLsold, HLmaintenance)
     return render_template('heidelberglaan.html',
                            HLcansAmount=HLcansAmount,
                            amountpercentcans=amountpercent(HLcansAmount, maxcans),
                            maxcans=maxcans, maintenancemax=maintenancemax,
-                           amountpercentmaintenance=amountpercent(HLsold, maintenancemax),
+                           amountpercentmaintenance=amountpercent(HLmaintenance, maintenancemax),
                            HLsold=HLsold,
+                           HLmaintenance=HLmaintenance,
                            predictions=predictions)
 
 @app.route('/<path:filename>')
