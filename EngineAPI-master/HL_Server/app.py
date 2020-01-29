@@ -6,7 +6,7 @@ import voorspelling_HL
 app = Flask(__name__)
 
 maxcans = 6
-maintenancemax = 100
+maintenancemax = 200
 
 predictions = voorspelling_HL.get_week_prediction()
 
