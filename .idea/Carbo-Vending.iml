@@ -2,11 +2,11 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/EngineAPI-master" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EngineAPI-master/PL" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EngineAPI-master/HL_Server" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Carbo-Vending Project" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Carbo-Vending Project/PL" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Carbo-Vending Project/HL_Server" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Remote Python 3.7.3 (sftp://pi@192.168.137.48:22/usr/bin/python3)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
